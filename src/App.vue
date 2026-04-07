@@ -1,17 +1,22 @@
 <script setup>
-const title = 'vue_lessons baseline';
+import WorkspaceHero from './components/WorkspaceHero.vue';
+import WorkspaceChecklist from './components/WorkspaceChecklist.vue';
 </script>
 
 <template>
-  <main class="app">
-    <h1>{{ title }}</h1>
+  <main class="workspace-shell">
+    <WorkspaceHero />
+    <WorkspaceChecklist />
   </main>
 </template>
 
 <style scoped>
-.app {
-  padding: 24px;
+.workspace-shell {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  gap: 18px;
+  background: linear-gradient(180deg, #eef2ff 0%, #ffffff 100%);
   font-family: Arial, sans-serif;
 }
 </style>
-
