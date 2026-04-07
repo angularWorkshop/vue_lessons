@@ -1,0 +1,5 @@
+node_modules/
+dist/
+.codex-test-stdout.log
+.codex-test-stderr.log
+
