@@ -1,17 +1,65 @@
 <script setup>
-const title = 'vue_lessons baseline';
+import { studentProfile } from './student-profile.js';
 </script>
 
 <template>
-  <main class="app">
-    <h1>{{ title }}</h1>
-  </main>
+  <article class="profile-card">
+    <p class="profile-card__eyebrow">EduTec Vue Student</p>
+    <h1>{{ studentProfile.name }}</h1>
+    <p class="profile-card__role">{{ studentProfile.role }}</p>
+    <p>Текущий трек: {{ studentProfile.currentTrack }}</p>
+    <p>Главная цель: {{ studentProfile.goal }}</p>
+    <p>Фокус навыков: {{ studentProfile.skillFocus }}</p>
+    <button type="button">{{ studentProfile.ctaLabel }}</button>
+  </article>
 </template>
 
 <style scoped>
-.app {
-  padding: 24px;
+.profile-card {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  gap: 12px;
+  align-content: center;
+  background: linear-gradient(180deg, #fef3c7 0%, #ffffff 100%);
+  color: #78350f;
   font-family: Arial, sans-serif;
 }
-</style>
 
+.profile-card__eyebrow {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #d97706;
+}
+
+.profile-card__role {
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+  max-width: 720px;
+  font-size: 18px;
+}
+
+button {
+  width: fit-content;
+  margin-top: 8px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #d97706;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+</style>
