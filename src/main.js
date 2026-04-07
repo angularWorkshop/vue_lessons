@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 
-createApp(App).mount('#app');
-
+// TODO: mount the Vue app into the #app element.
+createApp(App);
