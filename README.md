@@ -1,24 +1,24 @@
-# vue_lessons
+# Topic 1.2 - Student Profile as an SFC
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+This exercise turns a simple screen into a readable single-file component with template, script setup, and scoped styles living together.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- keep state and template in the same SFC without losing structure
+- use <script setup> as the default Vue 3 authoring style
+- read and edit a component from top to bottom
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. Use studentProfile inside App.vue.
+2. Render the student name, role, current track, learning goal, skill focus, and button label.
+3. Keep the component as a real SFC with <script setup> and <style scoped>.
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
