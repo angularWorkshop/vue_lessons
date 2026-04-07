@@ -1,24 +1,24 @@
-# vue_lessons
+# Status Card Bindings
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+Use interpolation, v-bind, and classes to make the template reflect state honestly.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- render text through interpolation
+- bind attributes from state
+- derive CSS classes from one state model
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. Make the card reactive.
+2. Render the real texts.
+3. Bind status attributes and modifier classes.
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
