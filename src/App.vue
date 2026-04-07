@@ -1,17 +1,77 @@
 <script setup>
-const title = 'vue_lessons baseline';
+import { reactive } from 'vue';
+import { profileFormSeed } from './profile-form-seed.js';
+
+const profileForm = reactive({
+  fields: {
+    name: profileFormSeed.name,
+    email: profileFormSeed.email,
+    track: profileFormSeed.track,
+  },
+  agreement: {
+    accepted: profileFormSeed.agreementAccepted,
+  },
+  meta: {
+    status: profileFormSeed.status,
+  },
+  ui: {
+    submitLabel: profileFormSeed.submitLabel,
+  },
+});
 </script>
 
 <template>
-  <main class="app">
-    <h1>{{ title }}</h1>
-  </main>
+  <section class="profile-form">
+    <p class="eyebrow">Student Profile Draft</p>
+    <h1>{{ profileForm.fields.name }}</h1>
+    <p>{{ profileForm.fields.email }}</p>
+    <p>Трек: {{ profileForm.fields.track }}</p>
+    <p>Статус: {{ profileForm.meta.status }}</p>
+    <p>Согласие: {{ profileForm.agreement.accepted ? 'подтверждено' : 'не подтверждено' }}</p>
+    <button type="button">{{ profileForm.ui.submitLabel }}</button>
+  </section>
 </template>
 
 <style scoped>
-.app {
-  padding: 24px;
+.profile-form {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  gap: 12px;
+  align-content: center;
+  background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+  color: #1e3a8a;
   font-family: Arial, sans-serif;
+  border: 1px solid #bfdbfe;
+}
+
+.eyebrow {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2563eb;
+}
+
+h1 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+p, button {
+  margin: 0;
+  font-size: 18px;
+}
+
+button {
+  width: fit-content;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
 }
 </style>
-
