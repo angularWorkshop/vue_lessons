@@ -1,17 +1,60 @@
 <script setup>
-const title = 'vue_lessons baseline';
+import { repairScreen } from './repair-screen.js';
 </script>
 
 <template>
-  <main class="app">
-    <h1>{{ title }}</h1>
+  <main class="repair-screen">
+    <p class="eyebrow">TODO label</p>
+    <h1>TODO title</h1>
+    <p>TODO status</p>
+    <p>TODO owner</p>
+    <p>TODO note</p>
+    <button type="button">TODO action</button>
   </main>
 </template>
 
 <style scoped>
-.app {
-  padding: 24px;
+.repair-screen {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  gap: 12px;
+  align-content: center;
+  background: linear-gradient(180deg, #ecfeff 0%, #ffffff 100%);
+  color: #164e63;
   font-family: Arial, sans-serif;
 }
-</style>
 
+.eyebrow {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0ea5e9;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+  max-width: 720px;
+  font-size: 18px;
+}
+
+button {
+  width: fit-content;
+  margin-top: 8px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #0ea5e9;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+</style>

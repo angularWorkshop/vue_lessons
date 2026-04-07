@@ -1,24 +1,24 @@
-# vue_lessons
+# Topic 1.1 - Repair the Starter
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+This exercise teaches the student to read the Vue entry point calmly and repair a broken starter before writing any new features.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- recognize the role of App.vue as the root component
+- restore the import and mount flow in main.js
+- replace placeholders in the first root screen with real bindings
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. Fix src/main.js so the app imports App and mounts into #app.
+2. Use the repair-screen data module inside App.vue.
+3. Render the product label, title, project status, owner, note, and CTA button.
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```

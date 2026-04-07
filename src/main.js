@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+import WorkspaceApp from './App.vue';
 
-createApp(App).mount('#app');
-
+// TODO: the root component must be imported as App and mounted into #app.
+createApp(WorkspaceApp).mount('#root');
