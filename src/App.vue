@@ -1,17 +1,60 @@
 <script setup>
-const title = 'vue_lessons baseline';
+import { bootcampScreen } from './bootcamp-screen.js';
 </script>
 
 <template>
-  <main class="app">
-    <h1>{{ title }}</h1>
+  <main class="screen" data-testid="app-shell">
+    <p class="eyebrow">{{ bootcampScreen.productLabel }}</p>
+    <h1>{{ bootcampScreen.title }}</h1>
+    <p>Добро пожаловать, {{ bootcampScreen.studentName }}. Ты продолжаешь путь после JS и TS и входишь в Vue через первый рабочий экран.</p>
+    <p>Текущий трек: {{ bootcampScreen.currentTrack }}</p>
+    <p>Следующий шаг: {{ bootcampScreen.nextLesson }}</p>
+    <button type="button">{{ bootcampScreen.ctaLabel }}</button>
   </main>
 </template>
 
 <style scoped>
-.app {
-  padding: 24px;
+.screen {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  gap: 12px;
+  align-content: center;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  color: #123524;
   font-family: Arial, sans-serif;
 }
-</style>
 
+.eyebrow {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #42b883;
+}
+
+h1 {
+  margin: 0;
+  font-size: 40px;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+  max-width: 720px;
+  font-size: 18px;
+}
+
+button {
+  width: fit-content;
+  margin-top: 8px;
+  padding: 12px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #42b883;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+}
+</style>
