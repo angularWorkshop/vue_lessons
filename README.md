@@ -1,24 +1,24 @@
-# vue_lessons
+# Viewport-директива с cleanup: подсветить карточку при входе в экран и корректно снять observer
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+Сделать директиву, которая работает с observer-подобным ресурсом и не забывает про cleanup.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- custom directives for DOM mechanics
+- attach and cleanup observer resources
+- reflect viewport events in state
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. создай директиву, которая регистрирует observer на mount
+2. обновляй activeId при входе карточки в viewport
+3. корректно отключай observer при unmount
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
