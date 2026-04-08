@@ -1,0 +1,1 @@
+<script setup>defineEmits(['remove']);</script><template><button type="button" @click="$emit('remove')"><slot>Remove</slot></button></template>
