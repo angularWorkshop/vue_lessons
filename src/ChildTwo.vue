@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<RouterView />
+<section class="panel"><h2>Settings</h2></section>
 </template>
 
 <style scoped>
