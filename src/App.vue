@@ -1,17 +1,35 @@
 <script setup>
-const title = 'vue_lessons baseline';
+import { computed, ref, watch } from 'vue';
+
+const query = ref('  Vue  ');
+const normalizedQuery = computed(() => query.value.trim());
+const syncStatus = computed(() => (normalizedQuery.value ? 'ready' : 'idle'));
+
+watch(normalizedQuery, value => {
+  document.title = value ? `Search: ${value}` : 'Search';
+}, { immediate: true });
 </script>
 
 <template>
-  <main class="app">
-    <h1>{{ title }}</h1>
-  </main>
+  <section class="watcher-screen">
+    <label>
+      Query
+      <input type="text" v-model="query" />
+    </label>
+    <p>Normalized: {{ normalizedQuery }}</p>
+    <p>Status: {{ syncStatus }}</p>
+  </section>
 </template>
 
 <style scoped>
-.app {
-  padding: 24px;
+.watcher-screen {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
+  color: #9a3412;
   font-family: Arial, sans-serif;
 }
 </style>
-
