@@ -1,9 +1,29 @@
 <script setup>
+import { onMounted, reactive, ref } from 'vue';
+import { fetchOperations } from './operations-api.js';
 
+const query = ref('');
+const screen = reactive({
+  loading: false,
+  error: null,
+  items: [],
+});
+
+onMounted(async () => {
+  screen.items = await fetchOperations(query.value);
+});
 </script>
 
 <template>
-<RouterView />
+<section class="screen">
+  <article class="panel stack">
+    <h1>Operations Queue</h1>
+    <input v-model="query" placeholder="Search tasks" />
+    <ul>
+      <li v-for="item in screen.items" :key="item.id">{{ item.title }}</li>
+    </ul>
+  </article>
+</section>
 </template>
 
 <style scoped>
