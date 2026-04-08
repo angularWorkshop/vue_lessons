@@ -1,17 +1,67 @@
 <script setup>
-const title = 'vue_lessons baseline';
+import { reactive } from 'vue';
+import { registrationSeed } from './registration-seed.js';
+
+const form = reactive({
+  ...registrationSeed,
+  fields: {
+    ...registrationSeed.fields,
+  },
+});
+
+function submitForm() {
+  // TODO
+}
 </script>
 
 <template>
-  <main class="app">
-    <h1>{{ title }}</h1>
-  </main>
+  <form class="registration-form" @submit.prevent="submitForm">
+    <h1>Registration Flow</h1>
+    <label>
+      Name
+      <input type="text" />
+    </label>
+    <label>
+      Email
+      <input type="email" />
+    </label>
+    <label>
+      <input type="checkbox" />
+      Agreement accepted
+    </label>
+    <p>���: {{ form.fields.name }}</p>
+    <p>Email: {{ form.fields.email }}</p>
+    <p>��������: {{ form.agreementAccepted ? '��' : '���' }}</p>
+    <p>������: {{ form.submitStatus }}</p>
+    <p>{{ form.resultMessage }}</p>
+    <button type="submit">���������</button>
+  </form>
 </template>
 
 <style scoped>
-.app {
-  padding: 24px;
+.registration-form {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  gap: 12px;
+  align-content: center;
+  background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+  color: #14532d;
   font-family: Arial, sans-serif;
 }
-</style>
 
+label {
+  display: grid;
+  gap: 6px;
+}
+
+button {
+  width: fit-content;
+  border: 0;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: #16a34a;
+  color: white;
+  font-weight: 700;
+}
+</style>
