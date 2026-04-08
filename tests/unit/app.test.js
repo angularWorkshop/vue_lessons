@@ -1,12 +1,1 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { readFileSync } from 'node:fs'; import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue'; describe('feature architecture refactor', () => { it('moves catalog logic into a feature helper', () => { expect(readFileSync('src/App.vue','utf8')).toContain('useCatalogFeature'); }); it('still renders the same feature content', () => { const wrapper = mount(App); expect(wrapper.text()).toContain('Feature Catalog'); expect(wrapper.text()).toContain('Router Lab'); }); });
