@@ -1,0 +1,1 @@
+import { defineStore } from 'pinia'; import { saveStatus } from '../status-api.js'; export const useStatusStore = defineStore('status', { state: () => ({ status: 'draft' }), actions: { async publish() { await saveStatus(); this.status = 'published'; } } });
