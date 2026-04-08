@@ -1,12 +1,1 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue'; describe('platform user flow', () => { it('moves from login into workspace', async () => { const wrapper = mount(App); expect(wrapper.text()).toContain('Stage: login'); await wrapper.get('button').trigger('click'); expect(wrapper.text()).toContain('Stage: workspace'); }); });
