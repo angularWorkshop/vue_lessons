@@ -1,9 +1,23 @@
 <script setup>
+import { useRoute, useRouter } from 'vue-router';
+import { login } from './auth.js';
 
+const route = useRoute();
+const router = useRouter();
+
+async function finishLogin() {
+  login();
+  await router.push(route.query.redirect ?? '/');
+}
 </script>
 
 <template>
-<RouterView />
+<section class="screen">
+  <article class="panel stack">
+    <h1>Login</h1>
+    <button type="button" @click="finishLogin">Login</button>
+  </article>
+</section>
 </template>
 
 <style scoped>
