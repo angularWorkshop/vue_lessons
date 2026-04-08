@@ -16,15 +16,17 @@
     "node": ">=20.0.0"
   },
   "dependencies": {
-    "vue": "^3.5.13"
+    "pinia": "^3.0.3",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.1"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/compiler-sfc": "^3.5.13",
     "@vue/test-utils": "^2.4.6",
     "jsdom": "^26.0.0",
+    "typescript": "^5.8.3",
     "vite": "^5.4.14",
     "vitest": "^3.2.4"
   }
 }
-
