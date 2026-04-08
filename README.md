@@ -1,24 +1,24 @@
-# vue_lessons
+# Интеграция с внешним виджетом: обновлять входные данные и чисто освобождать ресурс
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+Интегрировать внешний imperative widget так, чтобы обновление входных данных и cleanup были частью контракта.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- coordinate Vue state with an external resource
+- update an imperative widget after prop changes
+- cleanup external subscriptions on unmount
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. инициализируй внешний widget в контейнере
+2. обновляй widget, когда меняется label
+3. освобождай ресурс в cleanup при размонтировании
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
