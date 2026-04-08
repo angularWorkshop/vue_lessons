@@ -1,12 +1,2 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { readFileSync } from 'node:fs'; import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
+describe('typed profile form', () => { it('contains a named interface instead of any', () => { const source = readFileSync('src/App.vue', 'utf8'); expect(source).toContain('interface ProfileForm'); expect(source.includes('any')).toBe(false); }); it('renders typed state', async () => { const wrapper = mount(App); await wrapper.findAll('input')[0].setValue('Nina'); expect(wrapper.text()).toContain('Nina'); }); });
