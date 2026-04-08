@@ -1,12 +1,1 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue'; describe('debug buggy flow', () => { it('matches items ignoring case', async () => { const wrapper = mount(App); await wrapper.get('input').setValue('router'); expect(wrapper.text()).toContain('Router Lab'); }); });
