@@ -3,7 +3,7 @@
 </script>
 
 <template>
-<RouterView />
+<section class="stack"><p>Queue item: op-1</p></section>
 </template>
 
 <style scoped>

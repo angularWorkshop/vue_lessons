@@ -1,9 +1,10 @@
 <script setup>
-
+import { useRoute } from 'vue-router';
+const route = useRoute();
 </script>
 
 <template>
-<RouterView />
+<section class="stack"><h2>Editor {{ route.params.id }}</h2><input value="Draft title" /></section>
 </template>
 
 <style scoped>
