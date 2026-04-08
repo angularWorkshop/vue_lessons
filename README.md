@@ -1,24 +1,24 @@
-# vue_lessons
+# Scoped slots для строк и статусов: собрать таблицу без жёсткой привязки к одному шаблону
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+Сделать UI-композицию гибкой и читаемой за счёт слотов и специальных Vue-механик, а не через десять жёстких props.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- slots or advanced rendering patterns
+- keep flexible component contracts readable
+- test real UI behavior
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. сделай публичный контракт компонента явным
+2. используй slots там, где шаблон должен оставаться гибким
+3. убедись, что поведение видно прямо в тестах
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
