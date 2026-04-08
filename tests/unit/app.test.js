@@ -1,12 +1,2 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { readFileSync } from 'node:fs'; import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
+describe('typed table', () => { it('keeps lang ts and keyof-based column config', () => { expect(readFileSync('src/App.vue','utf8')).toContain('lang="ts"'); expect(readFileSync('src/types.ts','utf8')).toContain('keyof Row'); }); it('renders row values', () => { const wrapper = mount(App); expect(wrapper.text()).toContain('Nina'); expect(wrapper.text()).toContain('beginner'); }); });
