@@ -1,24 +1,24 @@
-# vue_lessons
+# Одна повторяющаяся логика для двух списков: собрать общий composable без скрытой магии
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+Р’С‹РЅРµСЃС‚Рё РѕР±С‰СѓСЋ С„РёР»СЊС‚СЂР°С†РёСЋ РІ РѕРґРёРЅ composable Рё РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РµРіРѕ РЅРµР·Р°РІРёСЃРёРјРѕ РІ РґРІСѓС… СЃРїРёСЃРєР°С….
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- reuse composables without shared accidental state
+- keep two list panels independent
+- read a component that uses one contract twice
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. СЃРґРµР»Р°Р№ С‚Р°Рє, С‡С‚РѕР±С‹ РєР°Р¶РґС‹Р№ СЃРїРёСЃРѕРє РІС‹Р·С‹РІР°Р» useDirectoryFilter РѕС‚РґРµР»СЊРЅРѕ
+2. СЃРІСЏР¶Рё РѕР±Р° input СЃРѕ СЃРІРѕРёРј query, Р° РЅРµ СЃ РѕР±С‰РµР№ СЃР»СѓС‡Р°Р№РЅРѕР№ РїРµСЂРµРјРµРЅРЅРѕР№
+3. СѓР±РµРґРёСЃСЊ, С‡С‚Рѕ С„РёР»СЊС‚СЂР°С†РёСЏ РѕРґРЅРѕРіРѕ СЃРїРёСЃРєР° РЅРµ Р»РѕРјР°РµС‚ РІС‚РѕСЂРѕР№
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
