@@ -1,17 +1,77 @@
 <script setup>
-const title = 'vue_lessons baseline';
+import { reactive } from 'vue';
+import { modalSeed } from './modal-seed.js';
+
+const modal = reactive({
+  ...modalSeed,
+});
+
+function openModal() {
+  modal.isOpen = true;
+}
+
+function closeModal() {
+  modal.isOpen = false;
+}
+
+function toggleContent() {
+  modal.hasContent = !modal.hasContent;
+}
 </script>
 
 <template>
-  <main class="app">
-    <h1>{{ title }}</h1>
-  </main>
+  <section class="workspace">
+    <h1>Modal Review</h1>
+    <div class="toolbar">
+      <button type="button" @click="openModal">Open</button>
+      <button type="button" @click="closeModal">Close</button>
+      <button type="button" @click="toggleContent">Toggle content</button>
+    </div>
+
+    <section class="modal-frame" v-show="modal.isOpen">
+      <article class="modal-card" v-if="modal.hasContent">
+        <h2>{{ modal.title }}</h2>
+        <p>{{ modal.description }}</p>
+      </article>
+    </section>
+  </section>
 </template>
 
 <style scoped>
-.app {
-  padding: 24px;
+.workspace {
+  min-height: 100vh;
+  padding: 32px;
+  display: grid;
+  gap: 16px;
+  align-content: start;
+  background: linear-gradient(180deg, #f5f3ff 0%, #ffffff 100%);
+  color: #312e81;
   font-family: Arial, sans-serif;
 }
-</style>
 
+.toolbar {
+  display: flex;
+  gap: 8px;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 14px;
+  background: #7c3aed;
+  color: white;
+  font-weight: 700;
+}
+
+.modal-frame {
+  padding: 16px;
+  border-radius: 16px;
+  background: rgba(124, 58, 237, 0.12);
+}
+
+.modal-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: white;
+}
+</style>
