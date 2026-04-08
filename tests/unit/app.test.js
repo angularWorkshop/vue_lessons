@@ -1,12 +1,1 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { describe, expect, it } from 'vitest'; import { buildClientLog, createRuntimeConfig } from '../../src/runtime-config.js'; describe('runtime config and observability', () => { it('does not leak secret config into client log', () => { const config = createRuntimeConfig({ VITE_API_URL: '/api', VITE_SECRET: 'token', VITE_APP_NAME: 'Vue Platform' }); expect(buildClientLog(config).includes('token')).toBe(false); }); });
