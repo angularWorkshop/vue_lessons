@@ -1,24 +1,24 @@
-# vue_lessons
+# Контекст группы полей: собрать form group через provide/inject
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+РЎРѕР±СЂР°С‚СЊ form group, РіРґРµ РІРµСЂС…РЅРёР№ РєРѕРЅС‚РµР№РЅРµСЂ РїСЂРѕРІР°Р№РґРёС‚ РѕР±С‰РµРµ СЃРѕСЃС‚РѕСЏРЅРёРµ, Р° РІР»РѕР¶РµРЅРЅС‹Р№ Р±Р»РѕРє С‡РµСЃС‚РЅРѕ РµРіРѕ С‡РёС‚Р°РµС‚.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- provide/inject as a vertical dependency
+- keep form state in one reactive object
+- render a preview from a nested child
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. СЃРѕР·РґР°Р№ РѕРґРёРЅ reactive state РґР»СЏ name Рё email
+2. РїСЂРѕРІР°Р№РґСЊ СЌС‚РѕС‚ state РІ РґРѕС‡РµСЂРЅРёР№ preview-Р±Р»РѕРє
+3. СЃРґРµР»Р°Р№ С‚Р°Рє, С‡С‚РѕР±С‹ preview РѕР±РЅРѕРІР»СЏР»СЃСЏ РїСЂРё РІРІРѕРґРµ Р±РµР· Р»РёС€РЅРёС… props
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
