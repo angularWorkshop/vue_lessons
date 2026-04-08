@@ -1,0 +1,1 @@
+<template><article class="panel stack"><header><slot name="header">Header</slot></header><div><slot /></div></article></template>
