@@ -1,24 +1,24 @@
-# vue_lessons
+# Theme context для вложенного дерева: передать режим и accent без prop drilling
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+РџРµСЂРµРґР°С‚СЊ СЂРµР¶РёРј РёРЅС‚РµСЂС„РµР№СЃР° РІ РіР»СѓР±РѕРєРёР№ РґРѕС‡РµСЂРЅРёР№ Р±Р»РѕРє С‡РµСЂРµР· provide/inject Р±РµР· prop drilling.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- provide/inject as explicit context
+- keep a deep child synced with theme state
+- avoid prop drilling for purely vertical dependency
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. РїРѕРґРЅРёРјРё mode Рё accent РІ РѕРґРёРЅ РєРѕРЅС‚РµРєСЃС‚
+2. РїРµСЂРµРґР°Р№ РєРѕРЅС‚РµРєСЃС‚ С‡РµСЂРµР· provide/inject РґРѕ РіР»СѓР±РѕРєРѕР№ РєР°СЂС‚РѕС‡РєРё
+3. СЃРґРµР»Р°Р№ С‚Р°Рє, С‡С‚РѕР±С‹ РїРµСЂРµРєР»СЋС‡РµРЅРёРµ С‚РµРјС‹ СЃСЂР°Р·Сѓ РѕС‚СЂР°Р¶Р°Р»РѕСЃСЊ РІ badge
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
