@@ -1,12 +1,2 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { readFileSync } from 'node:fs'; import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
+describe('typed route-store flow', () => { it('types route parsing explicitly', () => { expect(readFileSync('src/route-types.ts','utf8')).toContain('value: string'); }); it('renders parsed user id', () => { const wrapper = mount(App); expect(wrapper.text()).toContain('User 42'); }); });
