@@ -1,12 +1,1 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { describe, expect, it } from 'vitest'; import { readTheme } from '../../src/read-theme.js'; describe('ssr safe access', () => { it('does not crash without a browser window', () => { expect(readTheme(null)).toBe('light'); }); });
