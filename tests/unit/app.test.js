@@ -1,12 +1,2 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { readFileSync } from 'node:fs'; import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
+describe('typed modal', () => { it('keeps lang ts and typed emits', () => { const source = readFileSync('src/ConfirmModal.vue', 'utf8'); expect(source).toContain('lang="ts"'); expect(source).toContain('defineEmits<'); }); it('updates the result after confirm', async () => { const wrapper = mount(App); await wrapper.get('button').trigger('click'); expect(wrapper.text()).toContain('accepted'); }); });
