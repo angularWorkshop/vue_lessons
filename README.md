@@ -1,24 +1,24 @@
-# vue_lessons
+# Orders Screen States
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+Read conditional rendering as a set of honest screen scenarios.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- separate loading, empty, error, and success branches
+- use v-show for a helper block that stays mounted
+- render a success list with stable keys
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. Keep the help panel mounted through v-show.
+2. Render the success list through v-for with order.id as the key.
+3. Make loading, empty, and error stay mutually exclusive.
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
