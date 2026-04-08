@@ -1,12 +1,2 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
+describe('data card slots', () => { it('renders header, content and actions slots', () => { const wrapper = mount(App); expect(wrapper.text()).toContain('Catalog'); expect(wrapper.text()).toContain('Loaded items'); expect(wrapper.text()).toContain('Refresh'); }); });
