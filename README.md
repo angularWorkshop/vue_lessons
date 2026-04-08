@@ -1,24 +1,24 @@
-# vue_lessons
+# Фильтры в URL: синхронизировать query со строкой поиска и уровнем
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+Связать фильтры экрана с query-параметрами маршрута так, чтобы URL отражал реальное состояние интерфейса.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- sync local UI state with URL query
+- restore state from route on first render
+- treat URL as a user-facing contract
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. инициализируй search и level из route.query
+2. обновляй query при изменении полей
+3. не теряй состояние после прямого захода по URL
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```

@@ -1,9 +1,23 @@
 <script setup>
+import { ref } from 'vue';
 
+const query = ref('');
+const level = ref('all');
 </script>
 
 <template>
-<RouterView />
+<section class="screen">
+  <article class="panel stack">
+    <h1>Catalog Filters</h1>
+    <input v-model="query" placeholder="Search" />
+    <select v-model="level">
+      <option value="all">all</option>
+      <option value="beginner">beginner</option>
+      <option value="advanced">advanced</option>
+    </select>
+    <p>State: {{ query || 'empty' }} / {{ level }}</p>
+  </article>
+</section>
 </template>
 
 <style scoped>
