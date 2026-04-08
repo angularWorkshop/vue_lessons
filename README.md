@@ -1,24 +1,24 @@
-# vue_lessons
+# Операционный экран без async-хаоса: стабилизировать loading, empty, error и URL-sync
 
-Base repository for EduTec Vue course exercises.
+## Goal
 
-Each exercise should branch from `main` into:
+Собрать операционный экран с честными async-состояниями и синхронизацией query без хаоса в шаблоне.
 
-- `lesson-topic-XX-exercise-YY-slug`
-- `answer-topic-XX-exercise-YY-slug`
+## What you are training
 
-Recommended workflow:
+- coordinate loading, empty, error and query state
+- treat async flow as explicit state machine
+- keep editor screen stable
 
-1. Branch from `main` into `lesson-topic-XX-exercise-YY-slug`.
-2. Copy files from `templates/exercise/` into the repository root.
-3. Adapt `README.md`, `src/App.vue`, and tests for the specific task.
-4. Ensure lesson branch has failing tests for unfinished `TODO`s.
-5. Create `answer-topic-XX-exercise-YY-slug` from the lesson branch and finish the solution.
+## Task
 
-Scripts:
+1. раздели loading, empty, error и success
+2. свяжи строку фильтра с route query
+3. не смешивай несколько экранных состояний в одной ветке
 
-- `npm run dev` - start Vite dev server
-- `npm run test` - run Vitest once
-- `npm run test:watch` - run Vitest in watch mode
-- `npm run start:dev` - run Vite and auto-check status together
+## Run locally
 
+```bash
+npm install
+npm run test
+```
