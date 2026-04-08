@@ -1,12 +1,2 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { readFileSync } from 'node:fs'; import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
+describe('typed remote resource', () => { it('defines a typed union contract', () => { expect(readFileSync('src/remote-resource.ts','utf8')).toContain('RemoteResource<T>'); }); it('renders success data', () => { const wrapper = mount(App); expect(wrapper.text()).toContain('success'); expect(wrapper.text()).toContain('Profile'); }); });
