@@ -1,12 +1,2 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { describe, expect, it, beforeEach } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
+describe('pinia persistence', () => { beforeEach(() => { localStorage.clear(); }); it('restores saved theme and persists the next value', async () => { localStorage.setItem('ui-theme', 'dark'); const wrapper = mount(App); await new Promise(resolve => setTimeout(resolve, 0)); expect(wrapper.text()).toContain('dark'); await wrapper.get('button').trigger('click'); expect(localStorage.getItem('ui-theme')).toBe('light'); }); });
