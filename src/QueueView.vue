@@ -1,9 +1,11 @@
 <script setup>
-
+import { useRouter } from 'vue-router';
+const router = useRouter();
+function openEditor() { router.push('/editor/op-1'); }
 </script>
 
 <template>
-<RouterView />
+<section class="stack"><p>Queue item: op-1</p><button type="button" @click="openEditor">Open editor</button></section>
 </template>
 
 <style scoped>
