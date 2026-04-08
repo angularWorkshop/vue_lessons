@@ -1,12 +1,2 @@
-import { describe, expect, it } from 'vitest';
-import { mount } from '@vue/test-utils';
-import App from '../../src/App.vue';
-
-describe('baseline app', () => {
-  it('renders the baseline title', () => {
-    const wrapper = mount(App);
-
-    expect(wrapper.text()).toContain('vue_lessons baseline');
-  });
-});
-
+import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
+describe('keep alive tabs', () => { it('preserves draft between tab switches', async () => { const wrapper = mount(App); const buttons = wrapper.findAll('button'); await wrapper.get('input').setValue('critical draft'); await buttons[1].trigger('click'); await buttons[0].trigger('click'); expect(wrapper.get('input').element.value).toBe('critical draft'); }); });
