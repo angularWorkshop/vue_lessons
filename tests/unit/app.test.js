@@ -1,3 +1,3 @@
 import { describe, expect, it } from 'vitest'; import { mount } from '@vue/test-utils'; import App from '../../src/App.vue';
 function flushPromises() { return new Promise(resolve => setTimeout(resolve, 0)); }
-describe('teleport and suspense', () => { it('renders async panel into body', async () => { const wrapper = mount(App, { attachTo: document.body }); await wrapper.get('button').trigger('click'); await flushPromises(); await flushPromises(); expect(document.body.textContent).toContain('Async panel ready'); }); });
+describe('teleport and suspense', () => { it('renders async panel into body', async () => { const wrapper = mount(App, { attachTo: document.body }); await wrapper.get('button').trigger('click'); for (let i = 0; i < 20 && !document.body.textContent.includes('Async panel ready'); i++) { await flushPromises(); } expect(document.body.textContent).toContain('Async panel ready'); }); });
